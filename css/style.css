@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Allison&family=Nunito+Sans:opsz,wght@6..12,200&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 40%;
+}
+
+body {
+  margin: 0;
+  max-height: 100vh;
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "section header"
+    "section main"
+    "section nav";
+  column-gap: 5em;
+}
+
+header {
+  grid-area: header;
+  font-family: "Allison", cursive;
+  font-size: 2.8em;
+  color: mediumblue;
+  text-align: center;
+  padding-right: 6em;
+}
+
+main {
+  grid-area: main;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+  color: rgb(87, 117, 173);
+  padding-right: 5em;
+  place-items: center;
+}
+
+nav {
+  grid-area: nav;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2.5em;
+  text-align: center;
+  padding-right: 9em;
+  padding-left: 3em;
+}
+
+.contacto {
+  border-radius: 15px;
+  padding: 8px 15px;
+  color: lightblue;
+  background-color: rgb(71, 71, 156);
+}
+
+.contacto:hover {
+  background-color: royalblue;
+  color: cyan;
+}
+
+section {
+  grid-area: section;
+  display: grid;
+}
+
+.foto {
+  align-items: center;
+  justify-items: end;
+}
