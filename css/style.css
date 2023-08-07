@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Allison&family=Nunito+Sans:opsz,wght@6..12,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital@1&family=Nunito+Sans:opsz,wght@6..12,200&family=Tangerine:wght@700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,57 +9,62 @@ html {
 }
 
 img {
-  border-radius: 50%;
-  max-width: 40%;
+  max-height: 100vh;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   max-height: 100vh;
-  background-color: lightblue;
+  background: linear-gradient(135deg, #0e0bb8, blue);
   display: grid;
   grid-template-columns: 2.5fr 1.5fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
-    "section header"
-    "section main"
-    "section nav";
-  column-gap: 5em;
+    "header foto"
+    "main foto"
+    "nav foto"
+    "enlaces foto";
+  grid-column-gap: 5em;
 }
 
 header {
   grid-area: header;
-  font-family: "Allison", cursive;
+  font-family: "Tangerine", cursive;
   font-size: 2.8em;
-  color: mediumblue;
-  text-align: center;
-  padding-right: 6em;
+  color: #fcffec;
+  place-self: end center;
+  padding: 0em 2em 0em 2em;
+}
+
+h1:hover {
+  color: cyan;
 }
 
 main {
   grid-area: main;
   font-family: "Nunito Sans", sans-serif;
   font-size: 2.5em;
-  text-align: center;
-  color: rgb(87, 117, 173);
-  padding-right: 5em;
-  place-items: center;
+  color: #fcffec;
+  padding: 0em 4em 0em 6em;
+}
+
+main:hover {
+  font-family: "Jost", sans-serif;
+  font-size: 3em;
 }
 
 nav {
   grid-area: nav;
-  font-family: "Nunito Sans", sans-serif;
   font-size: 2.5em;
-  text-align: center;
-  padding-right: 9em;
-  padding-left: 3em;
+  justify-self: center;
 }
 
 .contacto {
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 8px 15px;
-  color: lightblue;
-  background-color: rgb(71, 71, 156);
+  background-color: #9ba8d7;
+  color: #140e8a;
 }
 
 .contacto:hover {
@@ -68,11 +73,75 @@ nav {
 }
 
 section {
-  grid-area: section;
+  grid-area: foto;
   display: grid;
 }
 
 .foto {
   align-items: center;
-  justify-items: end;
+  justify-items: start;
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    margin: 0;
+    background: linear-gradient(120deg, #0e0bb8, blue);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr 2fr 1fr;
+    grid-template-areas:
+      "foto"
+      "header"
+      "main"
+      "nav";
+  }
+
+  img {
+    border-radius: 40%;
+    max-width: 17vh;
+    box-sizing: border-box;
+  }
+
+  picture {
+    margin-top: 1em;
+    grid-area: foto;
+    border-radius: 60%;
+    max-width: 5em;
+    place-items: center end;
+    box-sizing: border-box;
+  }
+
+  .foto {
+    align-items: center;
+    justify-items: start;
+  }
+
+  header {
+    grid-area: header;
+    font-family: "Tangerine", cursive;
+    font-size: 1.8em;
+    color: #fcffec;
+    place-self: end center;
+    padding: 0em 3em 0em 3em;
+  }
+
+  main {
+    grid-area: main;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2em;
+    color: #fcffec;
+    padding: 0em 3em 0em 3em;
+  }
+
+  main:hover {
+    font-family: "Jost", sans-serif;
+    font-size: 3em;
+    padding: 0em 2em 0em 2em;
+  }
+
+  nav {
+    grid-area: nav;
+    font-size: 2em;
+    place-self: start center;
+  }
 }
