@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital@1&family=Nunito+Sans:opsz,wght@6..12,200&family=Tangerine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital@1&family=Tangerine:wght@700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,139 +9,159 @@ html {
 }
 
 img {
-  max-height: 100vh;
-  box-sizing: border-box;
+  max-height: 90vh;
 }
 
 body {
-  margin: 0;
-  max-height: 100vh;
+  margin: auto;
+  min-height: 100vh;
+  max-width: 1000px;
   background: linear-gradient(135deg, #0e0bb8, blue);
-  display: grid;
-  grid-template-columns: 2.5fr 1.5fr;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    "header foto"
-    "main foto"
-    "nav foto"
-    "enlaces foto";
-  grid-column-gap: 5em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "Jost", sans-serif;
 }
 
-header {
-  grid-area: header;
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fondo {
+  display: flex;
+  padding: 20px 20px 15px 30px;
+  margin: 20px;
+  align-items: center;
+  background-image: url(/img/imgCode.jpg);
+  background-position: center center;
+  background-size: cover;
+  border-radius: 40px;
+  border: inset 5px #039499;
+  max-height: 85vh;
+}
+
+h1 {
   font-family: "Tangerine", cursive;
-  font-size: 2.8em;
-  color: #fcffec;
-  place-self: end center;
-  padding: 0em 2em 0em 2em;
+  font-size: 5.8rem;
+  color: inherit;
+  text-shadow: 3px 3px 4px rgba(252, 253, 252, 0.8);
+  padding: 1% 10% 0px 10%;
+  border-radius: 30px;
+  box-shadow: 32px -24px 50px rgba(0, 0, 0, 0.5),
+    0 0 100px rgba(87, 128, 226, 0.7), 0 2px 18px rgba(112, 153, 251, 0.5);
 }
 
 h1:hover {
+  font-size: 6.2rem;
   color: cyan;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
 }
 
-main {
-  grid-area: main;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 2.5em;
-  color: #fcffec;
-  padding: 0em 4em 0em 6em;
-}
-
-main:hover {
-  font-family: "Jost", sans-serif;
-  font-size: 3em;
-}
-
-nav {
-  grid-area: nav;
-  font-size: 2.5em;
-  justify-self: center;
+.sobreMi {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(128, 209, 209, 0.616);
+  padding: 20px;
+  max-width: 60%;
+  font-size: 2.3em;
+  margin: auto;
 }
 
 .contacto {
   border-radius: 10px;
   padding: 8px 15px;
-  background-color: #9ba8d7;
-  color: #140e8a;
+  font-size: 1.8em;
+  background-color: cornflowerblue;
+  color: darkblue;
+  border: 1px solid darkblue;
+  box-shadow: 0px 0px 10px rgba(129, 230, 230, 0.692);
 }
 
 .contacto:hover {
+  border: 1px solid cyan;
   background-color: royalblue;
   color: cyan;
-}
-
-section {
-  grid-area: foto;
-  display: grid;
+  box-shadow: 0 0 30px rgba(87, 128, 226, 0.7),
+    0 2px 18px rgba(112, 153, 251, 0.5);
 }
 
 .foto {
-  align-items: center;
-  justify-items: start;
+  justify-content: flex-start;
+  padding-right: 15%;
 }
 
-@media only screen and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    background: linear-gradient(120deg, #0e0bb8, blue);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 2fr 1fr;
-    grid-template-areas:
-      "foto"
-      "header"
-      "main"
-      "nav";
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
   }
 
   img {
-    border-radius: 40%;
-    max-width: 17vh;
+    max-width: 35%;
     box-sizing: border-box;
-  }
-
-  picture {
-    margin-top: 1em;
-    grid-area: foto;
-    border-radius: 60%;
-    max-width: 5em;
-    place-items: center end;
-    box-sizing: border-box;
+    border-radius: 50%;
+    margin-left: 35%;
   }
 
   .foto {
+    display: flex;
+    order: -1;
+  }
+
+  picture {
+    justify-content: center;
     align-items: center;
-    justify-items: start;
   }
 
-  header {
-    grid-area: header;
+  .fondo {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 10px 10px 5px;
+    margin: 0px 15px 15px 15px;
+    align-items: center;
+    background-image: none;
+    border: none;
+  }
+
+  h1 {
     font-family: "Tangerine", cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: #f4f4f4;
+    padding-left: 6%;
+    text-shadow: none;
+    box-shadow: 8px -8px 7px rgba(87, 128, 226, 0.7),
+      0 0 100px rgba(112, 153, 251, 0.5), 0 2px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  h1:hover {
+    font-size: 4.3rem;
+    color: cyan;
+  }
+
+  .sobreMi {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(235, 241, 241, 0.6);
+    padding: 10px;
+    max-width: 80%;
     font-size: 1.8em;
-    color: #fcffec;
-    place-self: end center;
-    padding: 0em 3em 0em 3em;
+    color: seashell;
+    margin: 0;
   }
 
-  main {
-    grid-area: main;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 2em;
-    color: #fcffec;
-    padding: 0em 3em 0em 3em;
-  }
-
-  main:hover {
-    font-family: "Jost", sans-serif;
-    font-size: 3em;
-    padding: 0em 2em 0em 2em;
-  }
-
-  nav {
-    grid-area: nav;
-    font-size: 2em;
-    place-self: start center;
+  .contacto {
+    padding: 7px 12px;
+    background-color: #0770f1;
+    color: darkblue;
+    border: 1px solid darkblue;
+    box-shadow: 0px 0px 10px rgba(129, 230, 230, 0.692);
   }
 }
